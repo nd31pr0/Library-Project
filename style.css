@@ -8,10 +8,38 @@ container {
     min-height: 100vh;
 }
 .header {
-
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.title h1 {
+    color: #6cf;
+}
+img {
+    height: 80px;
+    margin: 20px;
+    border-radius: 10px;
 }
 .content {
-    background-color: aquamarine;
+    background-color: rgb(161, 160, 160);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    min-height: vh;
+}
+.box {
+    border: 2px solid #ccc;
+    min-height: 200px;
+}
+.log {
+    padding-left: 45%;
+    padding-top: 50px;
+}
+button {
+    background-color: white;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: solid 2px #6cf;
+    margin: 0 5px;
 }
 .footer {
     position: fixed;
