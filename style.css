@@ -58,6 +58,14 @@ button:hover {
     border-radius: 10px;
     margin: auto;
   }
+  .form {
+    width: 20%;
+    margin: auto;
+    padding-top: 120px;
+  }
+  .inputel {
+    width: 200%
+  }
 .footer {
     position: fixed;
     bottom: 0;
