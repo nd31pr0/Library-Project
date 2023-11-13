@@ -1,4 +1,10 @@
 const myLibrary = [];
+const book1 = new Book("Book 1", "Author 1", 200, "true");
+const book2 = new Book("Book 2", "Author 2", 300, "true");
+const book3 = new Book("Book 3", "Author 3", 250, "false");
+
+myLibrary.push(book1, book2, book3);
+
 
 function Book(title, author, pages, read) {
   // the constructor...
@@ -28,6 +34,7 @@ function addBookToLibrary() {
   document.getElementById("read").value = "false";
 
   console.log("Book added to library:", newBook);
+  displayBooks();
 }
 
 function displayBooks(){
@@ -44,7 +51,7 @@ function displayBooks(){
 
     // Create HTML content for the book details
     const bookDetails = document.createElement("p");
-    bookDetails.textContent = `Title: ${book.title}, Author: ${book.author}, Pages: ${book.pages}`;
+    bookDetails.textContent = `Title: ${book.title}, Author: ${book.author}, Pages: ${book.pages}, Read: ${book.read}`;
 
     // Append the book details to the book card
     bookCard.appendChild(bookDetails);
@@ -55,12 +62,6 @@ function displayBooks(){
 }
 
 
-const book1 = new Book("Book 1", "Author 1", 200);
-const book2 = new Book("Book 2", "Author 2", 300);
-const book3 = new Book("Book 3", "Author 3", 250);
-
-myLibrary.push(book1, book2, book3);
-
 
 
 const popUpForm = document.getElementById("popUpForm");
@@ -70,5 +71,6 @@ var button = document.getElementById("addBook");
 //button function//
 button.addEventListener("click", function() {
   document.getElementById("popUpForm").style.display = "block";
-  displayBooks();
 });
+
+document.getElementById('submit').addEventListener('click', addBookToLibrary)
