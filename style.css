@@ -5,7 +5,7 @@ body {
 container {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: vh;
 }
 .header {
     display: flex;
@@ -20,18 +20,22 @@ img {
     margin: 20px;
     border-radius: 10px;
 }
-.content {
-    background-color: rgb(161, 160, 160);
+/* .content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     min-height: vh;
-}
+    grid-gap: 10px;
+    margin: 0 20px;
+}*/
+
 .box {
     border: 2px solid #ccc;
-    min-height: 200px;
+    /* min-height: 150px; */
+    border-radius: 10px;
+    box-shadow: #ccc;
 }
 .log {
-    padding-left: 45%;
+    padding-left: 47%;
     padding-top: 50px;
 }
 button {
@@ -39,8 +43,21 @@ button {
     padding: 8px 10px;
     border-radius: 8px;
     border: solid 2px #6cf;
-    margin: 0 5px;
 }
+button:hover {
+    background-color: #6cf;
+}
+.form-popup {
+    display: none;
+    position: relative;
+    border: 3px solid #f1f1f1;
+    /* z-index: 9; */
+    background-color: #6cf;
+    width: 50%;
+    height: 500px;
+    border-radius: 10px;
+    margin: auto;
+  }
 .footer {
     position: fixed;
     bottom: 0;
