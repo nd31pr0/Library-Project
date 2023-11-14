@@ -22,7 +22,7 @@ document.getElementById("form").addEventListener("submit", function(e){
   const title = document.getElementById("b-title").value;
   const author = document.getElementById("author-name").value;
   const pages = document.getElementById("num-pages").value;
-  const rid = document.getElementById("read").value;
+  const rid = document.getElementById("read").checked;
   
   // Create a new Book object with the user-provided details
   const newBook = new Book(title, author, pages, rid);
@@ -35,7 +35,7 @@ document.getElementById("form").addEventListener("submit", function(e){
   document.getElementById("b-title").value = "";
   document.getElementById("author-name").value = "";
   document.getElementById("num-pages").value = "";
-  document.getElementById("read").checked = "false";
+  document.getElementById("read").value = "false";
 
   console.log("Book added to library:", newBook);
   displayBooks();
