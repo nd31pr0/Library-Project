@@ -15,7 +15,7 @@ const book3 = new Book("Book 3", "Author 3", 250, "false");
   
 myLibrary.push(book1, book2, book3);
   
-
+// Refactored by doing away with addBookToLibrary function and calling it's implementation directly here.
 document.getElementById("form").addEventListener("submit", function(e){
   e.preventDefault();
   // Prompt the user for book details
@@ -39,7 +39,7 @@ document.getElementById("form").addEventListener("submit", function(e){
 
   console.log("Book added to library:", newBook);
   displayBooks();
-  e.preventDefault();
+  closeModal();
 })
 
 function displayBooks(){
@@ -78,4 +78,7 @@ button.addEventListener("click", function() {
   document.getElementById("popUpForm").style.display = "block";
 });
 
+function closeModal() {
+    document.getElementById("popUpForm").style.display = "none";
+}
 // document.getElementById('form').addEventListener('submit', addBookToLibrary(e))
