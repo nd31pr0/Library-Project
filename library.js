@@ -16,7 +16,8 @@ const book3 = new Book("Book 3", "Author 3", 250, "false");
 myLibrary.push(book1, book2, book3);
   
 
-function addBookToLibrary() {
+document.getElementById("form").addEventListener("submit", function(e){
+  e.preventDefault();
   // Prompt the user for book details
   const title = document.getElementById("b-title").value;
   const author = document.getElementById("author-name").value;
@@ -34,11 +35,12 @@ function addBookToLibrary() {
   document.getElementById("b-title").value = "";
   document.getElementById("author-name").value = "";
   document.getElementById("num-pages").value = "";
-  document.getElementById("read").value = "false";
+  document.getElementById("read").checked = "false";
 
   console.log("Book added to library:", newBook);
   displayBooks();
-}
+  e.preventDefault();
+})
 
 function displayBooks(){
     const libraryContainer = document.getElementById("content-books");
@@ -76,4 +78,4 @@ button.addEventListener("click", function() {
   document.getElementById("popUpForm").style.display = "block";
 });
 
-document.getElementById('submit').addEventListener('click', addBookToLibrary())
+// document.getElementById('form').addEventListener('submit', addBookToLibrary(e))
