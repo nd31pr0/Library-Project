@@ -104,7 +104,10 @@ button:hover {
     padding-top: 30px;
 }
 
-
+.content-books {
+    display: grid;
+    align-items: center;
+}
 .book-card {
     border: 1px solid #6cf;
     padding: 10px;
@@ -114,6 +117,7 @@ button:hover {
     grid-template-rows: repeat(4 1fr);
     height: 200px;
     border-radius: 20px;
+    text-align: center;
   }
 
   .book-details {
