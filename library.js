@@ -79,7 +79,12 @@ function displayBooks(){
 
     bookCard.appendChild(bookRead);
 
+    // Add remove button to each card
+    const removeBook = document.createElement("button");
+    removeBook.textContent = `Remove`;
+    removeBook.classList.add("remove-btn");
 
+    bookCard.appendChild(removeBook);
 
     // Append the book card to the library container
     libraryContainer.appendChild(bookCard);
