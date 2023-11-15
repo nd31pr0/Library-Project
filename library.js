@@ -70,7 +70,7 @@ function displayBooks(){
     bookCard.appendChild(bookAuthor);
 
     const bookPage = document.createElement("p");
-    bookPage.textContent = `Page: ${book.page}`;
+    bookPage.textContent = `Page: ${book.pages}`;
 
     bookCard.appendChild(bookPage);
 
