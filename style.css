@@ -59,6 +59,7 @@ button:hover {
     border-radius: 10px;
     margin: auto;
     box-shadow: 1px 2px 3px 4px rgba(20,20,20,0.1);
+    margin-bottom: 80px;
   }
   .form {
     width: 20%;
