@@ -7,7 +7,7 @@ function Book(title, author, pages, read) {
     this.author = author;
     this.pages = pages;
     this.read = read;
-  }
+}
 
 const book1 = new Book("Book 1", "Author 1", 200, "true");
 const book2 = new Book("Book 2", "Author 2", 300, "true");
@@ -54,15 +54,15 @@ function displayBooks(){
     const bookCard = document.createElement("div");
     bookCard.classList.add("book-card");
 
-    // Create HTML content for the book details
+    // Create HTML content for the book title
     const bookTitle = document.createElement("p");
     bookTitle.textContent = `Title: ${book.title}`;
 
-    // Append the book details to the book card
+    // Append the book title to the book card
     bookCard.appendChild(bookTitle);
 
 
-    // Create HTML content for the book details
+    // Create HTML content for the book author
     const bookAuthor = document.createElement("p");
     bookAuthor.textContent = `Author: ${book.author}`;
 
