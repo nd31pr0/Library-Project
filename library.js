@@ -55,11 +55,31 @@ function displayBooks(){
     bookCard.classList.add("book-card");
 
     // Create HTML content for the book details
-    const bookDetails = document.createElement("p");
-    bookDetails.textContent = `Title: ${book.title}, Author: ${book.author}, Pages: ${book.pages}, Read: ${book.read}`;
+    const bookTitle = document.createElement("p");
+    bookTitle.textContent = `Title: ${book.title}`;
 
     // Append the book details to the book card
-    bookCard.appendChild(bookDetails);
+    bookCard.appendChild(bookTitle);
+
+
+    // Create HTML content for the book details
+    const bookAuthor = document.createElement("p");
+    bookAuthor.textContent = `Author: ${book.author}`;
+
+    // Append the book author to the book card
+    bookCard.appendChild(bookAuthor);
+
+    const bookPage = document.createElement("p");
+    bookPage.textContent = `Page: ${book.page}`;
+
+    bookCard.appendChild(bookPage);
+
+    const bookRead = document.createElement("p");
+    bookRead.textContent = `Read: ${book.read}`;
+
+    bookCard.appendChild(bookRead);
+
+
 
     // Append the book card to the library container
     libraryContainer.appendChild(bookCard);
