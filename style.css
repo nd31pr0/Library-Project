@@ -23,10 +23,11 @@ img {
 .content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    min-height: vh;
+    min-height: .5vh;
     grid-gap: 10px;
     margin: 0 20px;
     z-index: 7;
+    margin-bottom: 50px;
 }
 
 .box {
@@ -104,8 +105,6 @@ button:hover {
 }
 
 
-
-
 .book-card {
     border: 1px solid #6cf;
     padding: 10px;
@@ -113,10 +112,14 @@ button:hover {
     background-color: #f9f9f9;
     display: grid;
     grid-template-rows: repeat(4 1fr);
+    height: 300px;
   }
 
   .book-details {
     font-size: 16px;
     background-color: #ccc;
     margin-bottom: 5px;
+  }
+  #addBook {
+    margin-bottom: 130px;
   }

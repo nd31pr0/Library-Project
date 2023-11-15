@@ -76,7 +76,7 @@ var button = document.getElementById("addBook");
 //button function//
 button.addEventListener("click", function() {
   document.getElementById("popUpForm").style.display = "block";
-  document.getElementById("addBook").style.display = ""
+//   document.getElementById("addBook").style.display = ""
 });
 
 function closeModal() {
