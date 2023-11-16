@@ -80,14 +80,17 @@ function displayBooks(){
     bookCard.appendChild(bookRead);
 
     // Add remove button to each card
-    const removeBook = document.createElement("button");
-    removeBook.textContent = `Remove`;
-    removeBook.classList.add("remove-btn");
-
-    bookCard.appendChild(removeBook);
+    const removeBookBtn = document.createElement("button");
+    removeBookBtn.textContent = `Remove`;
+    removeBookBtn.setAttribute(`id`, `${myLibrary.indexOf(book)}`);
+    removeBookBtn.classList.add("remove-btn");
+    bookCard.appendChild(removeBookBtn);
 
     // Append the book card to the library container
     libraryContainer.appendChild(bookCard);
+     //button click to remove book
+    document.getElementById(`${myLibrary.indexOf(book)}`).addEventListener("click", removeBook(`${myLibrary.indexOf(book)}`))
+    
   });
 }
 
@@ -108,3 +111,16 @@ function closeModal() {
     document.getElementById("popUpForm").style.display = "none";
 }
 // document.getElementById('form').addEventListener('submit', addBookToLibrary(e))
+
+// Function to remove a book from the library
+function removeBook(event) {
+    // Retrieve the index of the book from the data attribute of the button
+    const index = event
+    
+    // Remove the book from the library array using splice
+    myLibrary.splice(index, 1);
+    
+    // Refresh the book display
+    //displayBooks();
+    console.log(myLibrary);
+  }
