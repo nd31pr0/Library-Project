@@ -62,28 +62,28 @@ button:hover {
     box-shadow: 1px 2px 3px 4px rgba(20,20,20,0.1);
     margin-bottom: 80px;
   }
-  .form {
+.form {
     width: 20%;
     margin: auto;
     padding-top: 120px;
     padding-right: 60px;
   }
-  input {
+input {
     height: 30px;
     border-radius: 10px;
     font-size: 18px;
   }
-  .inputel {
+.inputel {
     width: 200%
   }
-  #submit {
+#submit {
     width: 100%;
     margin: 0 50%;
     background-color:rgb(92, 91, 91);
     border: 4px solid white;
     color: white;
   }
-  #submit:hover {
+#submit:hover {
     background-color: #6cf;
   }
   .cont {
@@ -120,12 +120,12 @@ button:hover {
     text-align: center;
   }
 
-  .book-details {
+.book-details {
     font-size: 16px;
     background-color: #ccc;
     margin-bottom: 5px;
   }
-  #addBook {
+#addBook {
     margin-bottom: 130px;
   }
 
@@ -133,7 +133,7 @@ button:hover {
     width: 80px;
     margin: auto;
   }
-  .remove-btn:hover {
+.remove-btn:hover {
     background-color: #ccc;
   }
   
