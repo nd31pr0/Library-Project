@@ -120,7 +120,9 @@ input {
     border-radius: 20px;
     text-align: center;
   }
-
+.book-card > p:nth-child(4){
+    background-color: aquamarine;
+}
 .book-details {
     font-size: 16px;
     background-color: #ccc;

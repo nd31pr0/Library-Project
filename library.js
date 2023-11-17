@@ -80,9 +80,16 @@ function displayBooks(){
 
             const bookRead = document.createElement("p");
             bookRead.textContent = `Read: ${book.read}`;
-
             // Append Read status to the book card
             bookCard.appendChild(bookRead);
+
+            let status = book.read
+            bookRead.addEventListener("click", function (status){
+                if (status==true){
+                    status = false
+                } else status = true;
+                displayBooks();
+            });
 
             // Add remove button to each card
             const removeBookBtn = document.createElement("button");
