@@ -26,7 +26,7 @@ document.getElementById("form").addEventListener("submit", function(e){
   
   // Create a new Book object with the user-provided details
   const newBook = new Book(title, author, pages, rid);
-  console.log(newBook);
+ 
 
   // Add the new book to the library array
   myLibrary.push(newBook);
@@ -49,50 +49,74 @@ function displayBooks(){
     libraryContainer.innerHTML = "";
 
     // Loop through the myLibrary array and create a card for each book
-    myLibrary.forEach((book) => {
-    // Create a div element for the book card
-    const bookCard = document.createElement("div");
-    bookCard.classList.add("book-card");
+    myLibrary.forEach((book) => 
+        {
+            // Create a div element for the book card
+            const bookCard = document.createElement("div");
+            bookCard.classList.add("book-card");
 
-    // Create HTML content for the book title
-    const bookTitle = document.createElement("p");
-    bookTitle.textContent = `Title: ${book.title}`;
+            // Create HTML content for the book title
+            const bookTitle = document.createElement("p");
+            bookTitle.textContent = `Title: ${book.title}`;
 
-    // Append the book title to the book card
-    bookCard.appendChild(bookTitle);
+            // Append the book title to the book card
+            bookCard.appendChild(bookTitle);
 
 
-    // Create HTML content for the book author
-    const bookAuthor = document.createElement("p");
-    bookAuthor.textContent = `Author: ${book.author}`;
+            // Create HTML content for the book author
+            const bookAuthor = document.createElement("p");
+            bookAuthor.textContent = `Author: ${book.author}`;
 
-    // Append the book author to the book card
-    bookCard.appendChild(bookAuthor);
+            // Append the book author to the book card
+            bookCard.appendChild(bookAuthor);
 
-    const bookPage = document.createElement("p");
-    bookPage.textContent = `Page: ${book.pages}`;
+            const bookPage = document.createElement("p");
+            bookPage.textContent = `Page: ${book.pages}`;
 
-    bookCard.appendChild(bookPage);
+            // Append the number of pages to the bookCard
+            bookCard.appendChild(bookPage);
 
-    const bookRead = document.createElement("p");
-    bookRead.textContent = `Read: ${book.read}`;
+            const bookRead = document.createElement("p");
+            bookRead.textContent = `Read: ${book.read}`;
 
-    bookCard.appendChild(bookRead);
+            // Append Read status to the book card
+            bookCard.appendChild(bookRead);
 
-    // Add remove button to each card
-    const removeBookBtn = document.createElement("button");
-    removeBookBtn.textContent = `Remove`;
-    removeBookBtn.setAttribute(`id`, `${myLibrary.indexOf(book)}`);
-    removeBookBtn.classList.add("remove-btn");
-    bookCard.appendChild(removeBookBtn);
+            // Add remove button to each card
+            const removeBookBtn = document.createElement("button");
+            removeBookBtn.textContent = `Remove`;
+            removeBookBtn.classList.add("remove-btn");
 
-    // Append the book card to the library container
-    libraryContainer.appendChild(bookCard);
-     //button click to remove book
-    document.getElementById(`${myLibrary.indexOf(book)}`).addEventListener("click", removeBook(`${myLibrary.indexOf(book)}`))
-    
-  });
+            //append the remove button to each card
+            bookCard.appendChild(removeBookBtn);
+
+            // Append the book card to the library container
+            libraryContainer.appendChild(bookCard);
+        });
 }
+
+// Function to remove a book from the library
+function removeBook(event) {
+    let buts = document.querySelectorAll("remove-btn");
+    for (let i=0; i<buts.length; i++) {
+        if(JSON.stringify(buts[i].id) === JSON.stringify(event.id)) {
+            /* You can do your stuff here using index */
+            myLibrary.splice(event.id, 1);
+            displayBooks();
+        }
+    }
+    
+    // Remove the book from the library array using splice
+    // myLibrary.splice(index, 1);
+    
+    // // Refresh the book display
+    // //displayBooks();
+    // console.log(myLibrary);
+  }
+  //button click to remove book
+//   document.getElementById(`${myLibrary.indexOf(book)}`).addEventListener("click", removeBook(`${myLibrary.indexOf(book)}`))
+//   console.log(myLibrary);
+
 
 
 
@@ -106,21 +130,15 @@ button.addEventListener("click", function() {
   document.getElementById("popUpForm").style.display = "block";
 //   document.getElementById("addBook").style.display = ""
 });
+let (x < myLibrary.length);
+//get button ids
+const rmBtn = docucment.getElementById("${i}");
+rmBtn.addEventListener("click", function(){
+
+})
 
 function closeModal() {
     document.getElementById("popUpForm").style.display = "none";
 }
 // document.getElementById('form').addEventListener('submit', addBookToLibrary(e))
 
-// Function to remove a book from the library
-function removeBook(event) {
-    // Retrieve the index of the book from the data attribute of the button
-    const index = event
-    
-    // Remove the book from the library array using splice
-    myLibrary.splice(index, 1);
-    
-    // Refresh the book display
-    //displayBooks();
-    console.log(myLibrary);
-  }
