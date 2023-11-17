@@ -86,6 +86,12 @@ function displayBooks(){
             const removeBookBtn = document.createElement("button");
             removeBookBtn.textContent = `Remove`;
             removeBookBtn.classList.add("remove-btn");
+            removeBookBtn.addEventListener("click", function(e){
+                // bookCard.remove();
+                myLibrary.splice(e.id, 1);
+                console.log(myLibrary);
+                displayBooks();
+            })
 
             //append the remove button to each card
             bookCard.appendChild(removeBookBtn);
@@ -130,12 +136,13 @@ button.addEventListener("click", function() {
   document.getElementById("popUpForm").style.display = "block";
 //   document.getElementById("addBook").style.display = ""
 });
-let (x < myLibrary.length);
-//get button ids
-const rmBtn = docucment.getElementById("${i}");
-rmBtn.addEventListener("click", function(){
 
-})
+
+
+// const delBtns = document.getElementsByClassName("remove-btn");
+// const eltId = document.querySelector(".remove-btn").id
+// delBtns.addEventListener("click", removeBook(eltId));
+
 
 function closeModal() {
     document.getElementById("popUpForm").style.display = "none";
