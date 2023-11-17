@@ -40,11 +40,13 @@ document.getElementById("form").addEventListener("submit", function(e){
   console.log("Book added to library:", newBook);
   displayBooks();
   closeModal();
+  const button = document.getElementById("addBook");
+  button.style.display = "block";
 })
 
 function displayBooks(){
     const libraryContainer = document.getElementById("content-books");
-
+    document.getElementById("content-books").style.display = "grid";
     // Clear the existing content in the container
     libraryContainer.innerHTML = "";
 
@@ -102,12 +104,14 @@ function displayBooks(){
 
 
 const popUpForm = document.getElementById("popUpForm");
-var button = document.getElementById("addBook");
+const button = document.getElementById("addBook");
 //Form Pop-Up//
 
 //button function//
 button.addEventListener("click", function() {
   document.getElementById("popUpForm").style.display = "block";
+  document.getElementById("content-books").style.display = "none";
+  button.style.display = "none";
 //   document.getElementById("addBook").style.display = ""
 });
 
