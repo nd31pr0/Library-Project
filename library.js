@@ -89,7 +89,6 @@ function displayBooks(){
             removeBookBtn.addEventListener("click", function(e){
                 // bookCard.remove();
                 myLibrary.splice(e.id, 1);
-                console.log(myLibrary);
                 displayBooks();
             })
 
@@ -100,31 +99,6 @@ function displayBooks(){
             libraryContainer.appendChild(bookCard);
         });
 }
-
-// Function to remove a book from the library
-function removeBook(event) {
-    let buts = document.querySelectorAll("remove-btn");
-    for (let i=0; i<buts.length; i++) {
-        if(JSON.stringify(buts[i].id) === JSON.stringify(event.id)) {
-            /* You can do your stuff here using index */
-            myLibrary.splice(event.id, 1);
-            displayBooks();
-        }
-    }
-    
-    // Remove the book from the library array using splice
-    // myLibrary.splice(index, 1);
-    
-    // // Refresh the book display
-    // //displayBooks();
-    // console.log(myLibrary);
-  }
-  //button click to remove book
-//   document.getElementById(`${myLibrary.indexOf(book)}`).addEventListener("click", removeBook(`${myLibrary.indexOf(book)}`))
-//   console.log(myLibrary);
-
-
-
 
 
 const popUpForm = document.getElementById("popUpForm");
@@ -139,13 +113,7 @@ button.addEventListener("click", function() {
 
 
 
-// const delBtns = document.getElementsByClassName("remove-btn");
-// const eltId = document.querySelector(".remove-btn").id
-// delBtns.addEventListener("click", removeBook(eltId));
-
-
 function closeModal() {
     document.getElementById("popUpForm").style.display = "none";
 }
-// document.getElementById('form').addEventListener('submit', addBookToLibrary(e))
 
