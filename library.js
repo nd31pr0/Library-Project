@@ -8,6 +8,9 @@ function Book(title, author, pages, read) {
     this.pages = pages;
     this.read = read;
 }
+Book.prototype.toggleReadStatus = function() {
+    this.read = !this.read;
+  };
 
 const book1 = new Book("Book 1", "Author 1", 200, "true");
 const book2 = new Book("Book 2", "Author 2", 300, "true");
@@ -103,6 +106,20 @@ function displayBooks(){
 
             //append the remove button to each card
             bookCard.appendChild(removeBookBtn);
+
+            // Append the toggle button to each
+            const toggleStatusBtn = document.createElement("button");
+            toggleStatusBtn.textContent = `toggle Read`;
+            toggleStatusBtn.classList.add("toggle-btn");
+            toggleStatusBtn.addEventListener("click", function(e){
+                // bookCard.remove();
+                myLibrary.splice(e.id, 1);
+                displayBooks();
+            })
+
+            //append the toggle button to each card
+            bookCard.appendChild(toggleStatusBtn);
+
 
             // Append the book card to the library container
             libraryContainer.appendChild(bookCard);
