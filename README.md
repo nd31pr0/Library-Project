@@ -7,4 +7,4 @@ The project helps users create a book library and add new books through a user i
 
 ## Sample Output of the work
 
-
+![Output Image](images/phot.png)
