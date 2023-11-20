@@ -7,7 +7,7 @@ The project helps users create a book library and add new books through a user i
 
 ## Sample Output of the work
 
-![Output Image](images/phot.png)
+![\[Output Image\](images/phot.png)](images/output.png)
 
 ## The Odin Project (Web development) Completed projects
  
@@ -18,4 +18,4 @@ The project helps users create a book library and add new books through a user i
 * [Fifth Project - Calculator](https://github.com/nd31pr0/Odin_calculator_Project) [HTML | CSS | JavaScript]
 * [Sixth Project - Sign-up Form](https://github.com/nd31pr0/odin-signup-form-project) [HTML | CSS |]
 * [Seventh Project - Admin Dashboard](https://github.com/nd31pr0/Admin-Dashboard) [HTML | CSS | JavaScript]
-* [Eighth Project -Libray Project](https://github.com/nd31pr0/Library-Project)[HTML | CSS | JavaScript]
+* [Eighth Project -Library Project](https://github.com/nd31pr0/Library-Project)[HTML | CSS | JavaScript]
