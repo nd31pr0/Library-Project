@@ -8,9 +8,7 @@ function Book(title, author, pages, read) {
     this.pages = pages;
     this.read = read;
 }
-Book.prototype.toggleReadStatus = function() {
-    this.read = !this.read;
-  };
+
 
 const book1 = new Book("Book 1", "Author 1", 200, "true");
 const book2 = new Book("Book 2", "Author 2", 300, "true");
@@ -84,22 +82,15 @@ function displayBooks(){
             const bookRead = document.createElement("p");
             bookRead.textContent = `Read: ${book.read}`;
             // Append Read status to the book card
-            bookCard.appendChild(bookRead);
-
-            let status = book.read
-            bookRead.addEventListener("click", function (status){
-                if (status==true){
-                    status = false
-                } else status = true;
-                displayBooks();
-            });
-
+            bookCard.appendChild(bookRead);        
+   
             // Add remove button to each card
             const removeBookBtn = document.createElement("button");
             removeBookBtn.textContent = `Remove`;
             removeBookBtn.classList.add("remove-btn");
             removeBookBtn.addEventListener("click", function(e){
                 // bookCard.remove();
+                console.log(e)
                 myLibrary.splice(e.id, 1);
                 displayBooks();
             })
@@ -107,19 +98,24 @@ function displayBooks(){
             //append the remove button to each card
             bookCard.appendChild(removeBookBtn);
 
-            // Append the toggle button to each
+            // Toggle status button
             const toggleStatusBtn = document.createElement("button");
-            toggleStatusBtn.textContent = `toggle Read`;
+            toggleStatusBtn.textContent = `Toggle Read`;
             toggleStatusBtn.classList.add("toggle-btn");
             toggleStatusBtn.addEventListener("click", function(e){
-                // bookCard.remove();
-                myLibrary.splice(e.id, 1);
+                // Retrieve the index of the book from the data attribute of the button
+                const index = e.id;
+                console.log(e.id);
+                console.log(myLibrary[e.id])
+                // Toggle the read status of the book in the library array
+                //myLibrary[index].toggleReadStatus();
+                
+                // Refresh the book display
                 displayBooks();
-            })
+            })  
 
             //append the toggle button to each card
             bookCard.appendChild(toggleStatusBtn);
-
 
             // Append the book card to the library container
             libraryContainer.appendChild(bookCard);
@@ -139,7 +135,16 @@ button.addEventListener("click", function() {
 //   document.getElementById("addBook").style.display = ""
 });
 
-
+function toggleReadStatus(event) {
+    // Retrieve the index of the book from the data attribute of the button
+    const index = event.target.getAttribute('toggle-btn');
+    
+    // Toggle the read status of the book in the library array
+    library[index].toggleReadStatus();
+    
+    // Refresh the book display
+    displayBooks();
+  }
 
 function closeModal() {
     document.getElementById("popUpForm").style.display = "none";

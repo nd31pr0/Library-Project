@@ -116,7 +116,7 @@ input {
     background-color: #6cf;
     display: grid;
     grid-template-rows: repeat(4 1fr);
-    height: 270px;
+    height: 310px;
     border-radius: 20px;
     text-align: center;
   }
@@ -134,9 +134,16 @@ input {
 
   .remove-btn {
     width: 80px;
-    margin: auto;
+    margin: 0 auto;
+    margin-bottom: 20px;
   }
 .remove-btn:hover {
     background-color: #ccc;
   }
-  
+.toggle-btn{
+    width: 30%;
+    margin: auto;
+}
+.toggle-btn:hover{
+    background-color: #ccc;
+}
