@@ -104,9 +104,9 @@ function displayBooks(){
             toggleStatusBtn.classList.add("toggle-btn");
             toggleStatusBtn.addEventListener("click", function(e){
                 // Retrieve the index of the book from the data attribute of the button
-                const index = e.id;
-                console.log(e.id);
-                console.log(myLibrary[e.id])
+                const index = parseInt(e.target.dataset.index);
+                console.log(index);
+                console.log(myLibrary[index])
                 // Toggle the read status of the book in the library array
                 //myLibrary[index].toggleReadStatus();
                 
