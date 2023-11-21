@@ -110,16 +110,16 @@ function displayBooks(){
 
             toggleStatusBtn.textContent = `Toggle Read`;
             toggleStatusBtn.classList.add("toggle-btn");
+            // id attribute will help us target the clicked toggle button
             toggleStatusBtn.setAttribute("id", book.id);
 
             toggleStatusBtn.addEventListener("click", function(e){
-                // Retrieve the index of the book from the data attribute of the button
+                // Get the id of the clicked button
                 const id = e.target.getAttribute("id");
+                // Get index of the book in myLibrary array via its id
                 const index = myLibrary.findIndex(b => b.id == id);
-                //console.log(index);
+                //toggle the read status then
                 myLibrary[index].read = !myLibrary[index].read;
-                // Toggle the read status of the book in the library array
-                //myLibrary[index].toggleReadStatus();
                 
                 // Refresh the book display
                 displayBooks();
