@@ -1,18 +1,19 @@
-const myLibrary = [];
+let myLibrary = [];
 
 
-function Book(title, author, pages, read) {
+function Book(title, author, pages, read, id) {
   // the constructor...
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.read = read;
+    this.id = id || Date.now()+'-'+Math.round(Math.random() * 1E9);
 }
 
 
-const book1 = new Book("Book 1", "Author 1", 200, "true");
-const book2 = new Book("Book 2", "Author 2", 300, "true");
-const book3 = new Book("Book 3", "Author 3", 250, "false");
+const book1 = new Book("Book 1", "Author 1", 200, "true", 1);
+const book2 = new Book("Book 2", "Author 2", 300, "true", 2);
+const book3 = new Book("Book 3", "Author 3", 250, "false", 3);
   
 myLibrary.push(book1, book2, book3);
   
@@ -88,10 +89,15 @@ function displayBooks(){
             const removeBookBtn = document.createElement("button");
             removeBookBtn.textContent = `Remove`;
             removeBookBtn.classList.add("remove-btn");
+            removeBookBtn.setAttribute("id", book.id);
+
             removeBookBtn.addEventListener("click", function(e){
                 // bookCard.remove();
-                console.log(e)
-                myLibrary.splice(e.id, 1);
+                const id = e.target.getAttribute("id")
+                console.log(e.target.getAttribute("id"))
+                myLibrary = myLibrary.filter((bk) => bk.id != id);
+
+                // myLibrary.splice(e.id, 1);
                 displayBooks();
             })
 
@@ -100,12 +106,15 @@ function displayBooks(){
 
             // Toggle status button
             const toggleStatusBtn = document.createElement("button");
+            //removeBookBtn.setAttribute("id", book.id);
+
             toggleStatusBtn.textContent = `Toggle Read`;
             toggleStatusBtn.classList.add("toggle-btn");
+            toggleStatusBtn.setAttribute("id", book.id);
+
             toggleStatusBtn.addEventListener("click", function(e){
                 // Retrieve the index of the book from the data attribute of the button
-                const index = parseInt(e.target.dataset.index);
-                console.log(index);
+                const index = e.target.getAttribute("id");
                 console.log(myLibrary[index])
                 // Toggle the read status of the book in the library array
                 //myLibrary[index].toggleReadStatus();
