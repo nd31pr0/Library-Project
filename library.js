@@ -117,9 +117,11 @@ function displayBooks(){
                 // Get the id of the clicked button
                 const id = e.target.getAttribute("id");
                 // Get index of the book in myLibrary array via its id
-                const index = myLibrary.findIndex(b => b.id == id);
-                //toggle the read status then
-                myLibrary[index].read = !myLibrary[index].read;
+                let bk  = myLibrary.find(b => b.id == id);
+                bk.read = !bk.read;
+                // const index = myLibrary.findIndex(b => b.id == id);
+                // //toggle the read status then
+                // myLibrary[index].read = !myLibrary[index].read;
                 
                 // Refresh the book display
                 displayBooks();
